@@ -23,8 +23,3 @@ test('paramitarizated method', async({page})=>{
     await page.screenshot({path: 'screenshots/formsLayoutPage.png'})
     await pm.onFormLayoutsPage().submitInlineFormWithNameEmailAndCheckbox(randomFullName, randomEmail, true)
 })
-
-test.only('testing with argos ci', async({page}) =>{
-    const pm = new pageManager(page)
-    await pm.navigateTo().formsLayoutPage()
-})
