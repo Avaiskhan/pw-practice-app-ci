@@ -23,3 +23,11 @@ test('paramitarizated method', async({page})=>{
     await page.screenshot({path: 'screenshots/formsLayoutPage.png'})
     await pm.onFormLayoutsPage().submitInlineFormWithNameEmailAndCheckbox(randomFullName, randomEmail, true)
 })
+
+test.only('testing with argos ci', async({page}) =>{
+    const pm = new pageManager(page)
+    await pm.navigateTo().formsLayoutPage()
+    await pm.onFormLayoutsPage().submitUsingTheGridFromWithCredentialsAndSelectOption(process.env.PW_USERNAME, process.env.PW_PASSWORD, 'Option 1')
+    await page.screenshot({path: 'screenshots/formsLayoutPage.png'})
+
+})
