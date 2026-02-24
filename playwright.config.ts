@@ -28,9 +28,9 @@ export default defineConfig<TestOptions>({
   
   use: {
     globalQaURL: 'https://www.globalsqa.com/demo-site/draganddrop/',
-    baseURL: process.env.DEV == '1' ? 'http://localhost:4201/'
-          : process.env.STAGGING == '1' ? 'http://localhost:4202/'
-          :'http://localhost:4200/',
+    // baseURL: process.env.DEV === '1' ? 'http://localhost:4201/'
+    //       : process.env.STAGGING == '1' ? 'http://localhost:4202/'
+    //       :'http://localhost:4200/',
     
     trace: 'on-first-retry',
     actionTimeout: 20000,
@@ -42,13 +42,13 @@ export default defineConfig<TestOptions>({
 },
 
   projects: [
-    {
-      name: 'dev',
-      use: { 
-        ...devices['Desktop Chrome'],
-       baseURL: 'http://localhost:4200/'
-      },
-    },
+    // {
+    //   name: 'dev',
+    //   use: { 
+    //     ...devices['Desktop Chrome'],
+    //    baseURL: 'http://localhost:4200/'
+    //   },
+    // },
     // {
     //   name: 'stagging',
     //   use: { 
